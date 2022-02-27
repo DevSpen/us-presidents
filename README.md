@@ -41,6 +41,8 @@ import { presidents } from "us-presidents";
 console.log(presidents); //Array of objects containing info about all US presidents
 ```
 
+> **Note:** The `const { presidents } = require("us-presidents");` syntax is also supported, this applies to the functions as well.
+
 ## Functions
 
 <details>
