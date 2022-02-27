@@ -76,7 +76,7 @@ import { searchPresidentsByTerm } from "us-presidents";
 
 console.log(searchPresidentsByTerm(2021));
 /*
-Returns Donald Trump and Joe Biden because Trump's end year was 2021, and Biden's start year was 2021.
+Returns Donald Trump and Joe Biden because Trump's end year was 2021, and Biden's start year was 2021:
 [
   {
     order: 45,
