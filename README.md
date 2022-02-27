@@ -39,10 +39,7 @@ console.log(presidents); //Array of objects containing info about all US preside
 ## Functions
 
 <details>
-<summary>
-  
-  `randomPresident()`
-</summary>
+<summary><code>randomPresident()</code></summary>
 
 Gets a random president.
 
@@ -65,9 +62,11 @@ Example Response:
 }
 */
 ```
+
 </details>
 
-### `searchPresidents(query: string)`
+<details>
+<summary><code>searchPresidents(query: string)</code></summary>
 
 Search presidents by their name.
 
@@ -92,7 +91,10 @@ console.log(searchPresidents("donald trump")); //Returns a array of results, in 
 console.log(searchPresidents("donald trump")[0]); //Returns the first result, instead of an array of results
 ```
 
-### `searchPresidentsByTerm(year: number, type: "start" | "end" = "either")`
+</details>
+
+<details>
+<summary><code>searchPresidentsByTerm(year: number, type: "start" | "end" = "either")</code></summary>
 
 Returns an array of presidents who started and/or ended their term in a certain year.
 
@@ -131,7 +133,10 @@ console.log(searchPresidentsByTerm(2021, "end")); //Would just return Donald Tru
 console.log(searchPresidentsByTerm(null, "end")); //Would return Joe Biden as his term doesn't have an end year yet
 ```
 
-### `searchPresidentsByLife(year: number, type: "birth" | "death" = "either")`
+</details>
+
+<details>
+<summary><code>searchPresidentsByLife(year: number, type: "birth" | "death" = "either")</code><summary>
 
 Returns an array of presidents who were born and/or diseased in a certain year.
 
@@ -143,7 +148,10 @@ console.log(searchPresidentsByLife(1946, "birth")); //Returns an array of any pr
 console.log(searchPresidentsByLife(null, "death")); //Returns an array of every president who is still alive
 ```
 
-### `searchPresidentsByParty(partyName: "Republican" | "Democrat" | "Whig" |"Democratic-Republican" | "Federalist" | "National Union" )`
+</details>
+
+<details>
+<summary><code>searchPresidentsByParty(partyName: "Republican" | "Democrat" | "Whig" |"Democratic-Republican" | "Federalist" | "National Union" )</code></summary>
 
 Returns an array of all presidents of a certain party.
 
@@ -153,3 +161,5 @@ import { searchPresidentsByParty } from "us-presidents";
 console.log(searchPresidentsByParty("Republican")); //Returns an array of all presidents of the Republican party
 console.log(searchPresidentsByParty("Democrat")); //Returns an array of all presidents of the Democrat party
 ```
+
+</details>
