@@ -4,10 +4,30 @@ Search, fetch, and get data regarding United States presidents.
 
 ## Installation
 
+<details>
+  <summary>
+    <strong>
+      NPM
+    </strong>
+  </summary>
+
 ```sh-session
 npm install us-presidents
 ```
 
+</details>
+<details>
+  <summary>
+    <strong>
+      Yarn
+    </strong>
+  </summary>
+
+```sh-session
+yarn add us-presidents
+```
+
+</details>
 ## Data
 
 ```ts
@@ -18,7 +38,11 @@ console.log(presidents); //Array of objects containing info about all US preside
 
 ## Functions
 
-### `randomPresident()`
+<details>
+<summary>
+  
+  `randomPresident()`
+</summary>
 
 Gets a random president.
 
@@ -41,6 +65,7 @@ Example Response:
 }
 */
 ```
+</details>
 
 ### `searchPresidents(query: string)`
 
