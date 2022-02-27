@@ -1,6 +1,10 @@
-# us-presidents
-
-Search, fetch, and get data regarding United States presidents.
+<div align="center">
+  <h1>us-presidents</h1>
+  <p>Search, fetch, and get data regarding United States presidents.</p>
+  <a href="https://github.com/devspen/us-presidents">GitHub</a>
+  <a href="https://devspen.github.io/us-presidents">Documention</a>
+  <a href="#functions">Examples</a>
+</div>
 
 ## Installation
 
