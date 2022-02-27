@@ -152,7 +152,7 @@ console.log(searchPresidentsByLife(null, "death")); //Returns an array of every 
 </details>
 
 <details>
-<summary><code>searchPresidentsByParty(partyName: "Republican" | "Democrat" | "Whig" |"Democratic-Republican" | "Federalist" | "National Union" )</code></summary>
+<summary><code>searchPresidentsByParty(partyName: party)</code></summary>
 
 Returns an array of all presidents of a certain party.
 

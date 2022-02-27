@@ -1,5 +1,8 @@
 import { President } from "./types/President";
 
+/**
+ * Array of objects containing data about presidents.
+ */
 export const presidents: President[] = [
   {
     order: 1,
@@ -786,9 +789,9 @@ export const presidents: President[] = [
 ];
 
 export { randomPresident } from "./functions/randomPresident";
-export {
-  searchPresidents,
-  searchPresidentsByLife,
-  searchPresidentsByTerm,
-  searchPresidentsByParty,
-} from "./functions/searchPresidents";
+export { searchPresidents } from "./functions/searchPresidents";
+export { searchPresidentsByLife } from "./functions/searchPresidentsByLife";
+export { searchPresidentsByTerm } from "./functions/searchPresidentsByTerm";
+export { searchPresidentsByParty } from "./functions/searchPresidentsByParty";
+export { President } from "./types/President";
+export { party } from "./types/party";
