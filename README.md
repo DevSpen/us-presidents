@@ -28,6 +28,7 @@ yarn add us-presidents
 ```
 
 </details>
+
 ## Data
 
 ```ts
@@ -136,7 +137,7 @@ console.log(searchPresidentsByTerm(null, "end")); //Would return Joe Biden as hi
 </details>
 
 <details>
-<summary><code>searchPresidentsByLife(year: number, type: "birth" | "death" = "either")</code><summary>
+<summary><code>searchPresidentsByLife(year: number, type: "birth" | "death" = "either")</code></summary>
 
 Returns an array of presidents who were born and/or diseased in a certain year.
 
