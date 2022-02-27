@@ -1,0 +1,39 @@
+{
+  "name": "us-presidents",
+  "version": "0.0.1",
+  "description": "Search, fetch, and get data regarding United States presidents.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update": "npx tsc",
+    "prepublish": "npx tsc && npx typedoc src/index.ts --options typedoc.json && npm login && npm publush",
+    "start": "npx tsc --build && gen-esm-wrapper dist/index.js dist/index.mjs",
+    "doc": "npx typedoc src/index.ts --options typedoc.json"
+  },
+  "keywords": [
+    "president",
+    "presidents",
+    "us presidents",
+    "us-presidents",
+    "united states president",
+    "usa-president",
+    "usa president",
+    "usa presidents",
+    "search presidents"
+  ],
+  "author": "devspen",
+  "homepage": "https://github.com/devspen/us-presidents#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devspen/us-presidents.git"
+  },
+  "bugs": {
+    "url": "https://github.com/devspen/us-presidents/issues"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "gen-esm-wrapper": "^1.1.3"
+  }
+}
