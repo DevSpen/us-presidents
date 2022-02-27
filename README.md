@@ -3,6 +3,7 @@
   <p>Search, fetch, and get data regarding United States presidents.</p>
   <a href="https://github.com/devspen/us-presidents">GitHub</a>
   <a href="https://devspen.github.io/us-presidents">Documention</a>
+  <a href="https://discord.gg/yhDeR6Ugr8">Discord</a>
   <a href="#functions">Examples</a>
 </div>
 
