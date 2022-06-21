@@ -1,4 +1,4 @@
-import { party } from "./party";
+import { Party } from "../types/Party";
 
 
 /**
@@ -8,13 +8,13 @@ export interface President {
   order: number;
   name: string;
   description: string;
-  wikipedia: string;
+  wikipedia: `https://wikipedia.org/wiki/${string}`;
   term: {
     startYear: number;
     endYear: number | null;
     served: number | null;
   };
-  party: party;
+  party: Party;
   life: {
     birthYear: number;
     deathYear?: number | null;

@@ -2,7 +2,7 @@
   <h1>us-presidents</h1>
   <p>Search, fetch, and get data regarding United States presidents.</p>
   <a href="https://github.com/devspen/us-presidents">GitHub</a>
-  <a href="https://devspen.github.io/us-presidents">Documention</a>
+  <a href="https://devspen.github.io/us-presidents">Documentation</a>
   <a href="https://discord.gg/yhDeR6Ugr8">Discord</a>
   <a href="#functions">Examples</a>
 </div>
@@ -42,7 +42,7 @@ import { presidents } from "us-presidents";
 console.log(presidents); //Array of objects containing info about all US presidents
 ```
 
-> **Note:** The `const { presidents } = require("us-presidents");` syntax is also supported, this applies to the functions as well.
+> **Note:** The `const { presidents } = require("us-presidents");` common.js syntax is also supported, this applies to the functions as well.
 
 ## Functions
 
@@ -78,6 +78,8 @@ Example Response:
 
 Search presidents by their name.
 
+**Note:** Consider using `findPresident()` instead.
+
 ```ts
 import { searchPresidents } from "us-presidents";
 
@@ -102,14 +104,38 @@ console.log(searchPresidents("donald trump")[0]); //Returns the first result, in
 </details>
 
 <details>
-<summary><code>searchPresidentsByTerm(year: number, type: "start" | "end" = "either")</code></summary>
+<summary><code>findPresident(query: string)</code></summary>
+
+Find a president using their exact name.
+
+```ts
+import { findPresident } from "us-presidents";
+
+console.log(findPresident("Donald Trump"));
+/*
+{
+  order: 45,
+  name: 'Donald Trump',
+  description: 'Donald John Trump is an American politician, media personality, and businessman who served as the 45th president of the United States from 2017 to 2021.',
+  wikipedia: 'https://en.wikipedia.org/wiki/Donald_Trump',
+  term: { startYear: 2017, endYear: 2021, served: 1 },
+  party: 'Republican',
+  life: { birthYear: 1946, deathYear: null }
+}
+*/
+```
+
+</details>
+
+<details>
+<summary><code>searchPresidentsByTerm(year: number, type: PartOfTerm)</code></summary>
 
 Returns an array of presidents who started and/or ended their term in a certain year.
 
 ```ts
-import { searchPresidentsByTerm } from "us-presidents";
+import { searchPresidentsByTerm, PartOfTerm } from "us-presidents";
 
-console.log(searchPresidentsByTerm(2021));
+console.log(searchPresidentsByTerm(2021, PartOfTerm.Either));
 /*
 Returns Donald Trump and Joe Biden because Trump's end year was 2021, and Biden's start year was 2021:
 [
@@ -134,32 +160,32 @@ Returns Donald Trump and Joe Biden because Trump's end year was 2021, and Biden'
 ]
 */
 
-console.log(searchPresidentsByTerm(2021, "start")); //Would just return Joe Biden
+console.log(searchPresidentsByTerm(2021, PartOfTerm.Start)); //Would just return Joe Biden
 
-console.log(searchPresidentsByTerm(2021, "end")); //Would just return Donald Trump
+console.log(searchPresidentsByTerm(2021, PartOfTerm.End)); //Would just return Donald Trump
 
-console.log(searchPresidentsByTerm(null, "end")); //Would return Joe Biden as his term doesn't have an end year yet
+console.log(searchPresidentsByTerm(null, PartOfTeam.End)); //Would return Joe Biden as his term doesn't have an end year yet
 ```
 
 </details>
 
 <details>
-<summary><code>searchPresidentsByLife(year: number, type: "birth" | "death" = "either")</code></summary>
+<summary><code>searchPresidentsByLife(year: number, type: PartOfLife)</code></summary>
 
 Returns an array of presidents who were born and/or diseased in a certain year.
 
 ```ts
-import { searchPresidentsByLife } from "us-presidents";
+import { searchPresidentsByLife, PartOfLife } from "us-presidents";
 
-console.log(searchPresidentsByLife(1732)); //Returns an array of anyone who was born or diseased in 1732, in this case only George Washington
-console.log(searchPresidentsByLife(1946, "birth")); //Returns an array of any president who was born in 1946, Bill Clinton; Donald Trump; and George W. Bush
-console.log(searchPresidentsByLife(null, "death")); //Returns an array of every president who is still alive
+console.log(searchPresidentsByLife(1732, PartOfLife.Either)); //Returns an array of anyone who was born or diseased in 1732, in this case only George Washington
+console.log(searchPresidentsByLife(1946, PartOfLife.Birth)); //Returns an array of any president who was born in 1946, Bill Clinton; Donald Trump; and George W. Bush
+console.log(searchPresidentsByLife(null, PartOfLife.Death)); //Returns an array of every president who is still alive
 ```
 
 </details>
 
 <details>
-<summary><code>searchPresidentsByParty(partyName: party)</code></summary>
+<summary><code>searchPresidentsByParty(partyName: Party)</code></summary>
 
 Returns an array of all presidents of a certain party.
 

@@ -1,5 +1,5 @@
-import { presidents } from "../index";
-import { President } from "../types/President";
+import { presidents } from "..";
+import { President } from "../typings";
 
 /**
  * Gets a random president.

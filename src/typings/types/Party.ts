@@ -1,7 +1,7 @@
 /**
- * The party type, used in President interface and searchPresidentsByParty() function.
+ * The party type, used in President interface and `searchPresidentsByParty()` function.
  */
-export type party =
+export type Party =
   | "Republican"
   | "Democrat"
   | "Whig"

@@ -1,10 +1,10 @@
-import { presidents } from "..";
-import { party } from "../types/party";
-import { President } from "../types/President";
+import { presidents } from "../data";
+import { President, Party } from "../typings";
 
 /**
  * Searches presidents by their party.
-*/
-export function searchPresidentsByParty(query: party): President[] {
-  return presidents.filter((president) => president.party === query);
+ * @param party The party to search.
+ */
+export function searchPresidentsByParty(party: Party): President[] {
+  return presidents.filter((president) => president.party === party);
 }

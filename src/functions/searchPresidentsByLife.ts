@@ -1,21 +1,26 @@
-import { presidents } from "..";
-import { President } from "../types/President";
+import { presidents } from "../data";
+import { President, PartOfLife } from "../typings";
 
 /**
  * Searches presidents by their birth/death year.
-*/
+ */
 export function searchPresidentsByLife(
   query: number | null,
-  type: "birth" | "death" | "either" = "either"
+  type: PartOfLife
 ): President[] {
-  if (type === "birth")
-    return presidents.filter((president) => president.life.birthYear === query);
+  switch (type) {
+    case PartOfLife.Birth: {
+      return presidents.filter(({ life }) => life.birthYear === query);
+    }
 
-  if (type === "death")
-    return presidents.filter((president) => president.life.deathYear === query);
+    case PartOfLife.Death: {
+      return presidents.filter(({ life }) => life.deathYear === query);
+    }
 
-  return presidents.filter(
-    (president) =>
-      president.life.birthYear === query || president.life.deathYear === query
-  );
+    case PartOfLife.Life: {
+      return presidents.filter(
+        ({ life }) => life.deathYear === query || life.birthYear === query
+      );
+    }
+  }
 }

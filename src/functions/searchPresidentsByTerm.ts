@@ -1,23 +1,26 @@
 import { presidents } from "..";
-import { President } from "../types/President";
-
-
+import { President, PartOfTerm } from "../typings";
 
 /**
  * Searches presidents by their start and/or end term year.
  */
 export function searchPresidentsByTerm(
   query: number | null,
-  type: "start" | "end" | "either" = "either"
+  type: PartOfTerm
 ): President[] {
-  if (type === "start")
-    return presidents.filter((president) => president.term.startYear === query);
+  switch (type) {
+    case PartOfTerm.Start: {
+      return presidents.filter(({ term }) => term.startYear === query);
+    }
 
-  if (type === "end")
-    return presidents.filter((president) => president.term.endYear === query);
+    case PartOfTerm.End: {
+      return presidents.filter(({ term }) => term.endYear === query);
+    }
 
-  return presidents.filter(
-    (president) =>
-      president.term.startYear === query || president.term.endYear === query
-  );
+    case PartOfTerm.Either: {
+      return presidents.filter(
+        ({ term }) => term.startYear === query || term.endYear === query
+      );
+    }
+  }
 }
